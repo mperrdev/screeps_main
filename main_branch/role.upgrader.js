@@ -8,7 +8,7 @@ module.exports = {
         }
 
         if (creep.memory.working == true) {
-            if (creep.transfer(creep.room.controller, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+            if (creep.upgradeController(room.controller)) {
                 creep.moveTo(creep.room.controller);
             }
         }

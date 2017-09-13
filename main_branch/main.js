@@ -14,7 +14,9 @@ module.exports.loop = function () {
         }
     }
 
-    for (let spawner in Game.spawns) {
+    for (let name in Game.spawns) {
+        var spawner = Game.spawns[name];
+        
         roomSpawner.run(spawner);
     }
 

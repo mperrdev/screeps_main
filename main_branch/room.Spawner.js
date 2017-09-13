@@ -18,13 +18,13 @@ module.exports = {
         if (spawner.memory.harvesterCount < spawner.memory.minHarvesterCount) {
             if (spawner.energy == spawner.energyCapacity) {
                 var creepName = spawner.createCreep( [WORK,WORK,CARRY,MOVE], undefined, {working: false, role: 'harvester'} );
-                console.log("Spawning harvester creep: " + creepName);
+                console.log("Spawning harvester creep: " + creepName + " (" + spawner.memory.harvesterCount + ")");
             }
         }
         else if (spawner.memory.upgraderCount < spawner.memory.minUpgraderCount) {
             if (spawner.energy == spawner.energyCapacity) {
                 var creepName = spawner.createCreep( [WORK,CARRY,CARRY,MOVE], undefined, {working: false, role: 'upgrader'} );
-                console.log("Spawning upgrader creep: " + creepName);
+                console.log("Spawning upgrader creep: " + creepName + " (" + spawner.memory.upgraderCount + ")");
             }
         }
         else{

@@ -1,5 +1,7 @@
 module.exports = {
     run: function(creep) {
+
+
         if (creep.memory.working == true && creep.carry.energy == 0) {
             creep.memory.working = false;
         }
@@ -8,8 +10,10 @@ module.exports = {
         }
 
         if (creep.memory.working == true) {
-            if (creep.upgradeController(creep.room.controller) == ERR_NOT_IN_RANGE) {
-                creep.moveTo(creep.room.controller);
+            var constructionTarget = creep.pos.findClosestByPath(FIND_CONSTRUCTION_SITES);
+
+            if (creep.construct(constructionTarget) == ERR_NOT_IN_RANGE) {
+                creep.moveTo(constructionTarget);
 
             }
         }

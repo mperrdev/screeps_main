@@ -4,9 +4,9 @@ require('role.upgrader');
 module.exports = {
     run: function(spawner) {
         spawner.memory.minHarvesterCount = 10;
-        spawner.memory.harvesterCount = _.sum(spawner.room.creeps, (c) => c.memory.role == 'harvester');
+        spawner.memory.harvesterCount = _.sum(Game.creeps, (c) => c.memory.role == 'harvester');
         console.log(spawner.memory.harvesterCount);
-        console.log(spawner.room.creeps);
+        console.log(Game.creeps);
 
         if(spawner.memory.harvesterCount < spawner.memory.minHarvesterCount) {
             if (spawner.energy == spawner.energyCapacity) {

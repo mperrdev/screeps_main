@@ -5,12 +5,12 @@ module.exports = {
     run: function(spawner) {
 
         //Harvesters
-        spawner.memory.minHarvesterCount = 15;
+        spawner.memory.minHarvesterCount = 10;
         spawner.memory.harvesterCount = _.sum(Game.creeps, (c) => c.memory.role == 'harvester');
 
 
         //Upgraders
-        spawner.memory.minUpgraderCount = 5;
+        spawner.memory.minUpgraderCount = 4;
         spawner.memory.upgraderCount = _.sum(Game.creeps, (c) => c.memory.role == 'upgrader');
 
 

@@ -7,12 +7,12 @@ module.exports = {
         //Harvesters
         spawner.memory.minHarvesterCount = 15;
         spawner.memory.harvesterCount = _.sum(Game.creeps, (c) => c.memory.role == 'harvester');
-        console.log(spawner.memory.harvesterCount);
+
 
         //Upgraders
         spawner.memory.minUpgraderCount = 5;
         spawner.memory.upgraderCount = _.sum(Game.creeps, (c) => c.memory.role == 'upgrader');
-        console.log(spawner.memory.upgraderCount);
+
 
 
         if (spawner.memory.harvesterCount < spawner.memory.minHarvesterCount) {
@@ -29,6 +29,8 @@ module.exports = {
         }
         else{
             console.log("Met harvester and upgrader count in room: " + spawner.roomName);
+            console.log("Upgrader Count: " + spawner.memory.upgraderCount + "/" + spawner.memory.minUpgraderCount));
+            console.log("Harvester Count: " + spawner.memory.harvesterCount + "/" + spawner.memory.minHarvesterCount);
         }
     }
 };

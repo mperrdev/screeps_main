@@ -5,4 +5,4 @@ module.exports.loop = function {
             console.log("Spawning harvester creep: " + creepName);
         }
     }
-}
+};

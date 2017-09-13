@@ -14,7 +14,7 @@ module.exports = {
         }
         else {
             var source = creep.pos.findClosestByPath(Game.spawns.Spawn1)
-            if (creep.withdraw(Game.spawns.Spawn1, RESOURCE_ENERGY, (creep.carry.energy - creep.carryCapacity)) == ERR_NOT_IN_RANGE) {
+            if (creep.withdraw(Game.spawns.Spawn1, RESOURCE_ENERGY, (creep.carryCapacity - creep.carry.energy)) == ERR_NOT_IN_RANGE) {
                 creep.moveTo(Game.spawns.Spawn1);
             }
         }

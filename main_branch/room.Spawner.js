@@ -37,7 +37,7 @@ module.exports = {
             }
         }
         else{
-            console.log("Met creep limits in room: " + spawner.roomName);
+            console.log("Met creep limits in room: " + spawner.room.name);
             console.log("Upgrader Count: " + spawner.memory.upgraderCount + "/" + spawner.memory.minUpgraderCount);
             console.log("Harvester Count: " + spawner.memory.harvesterCount + "/" + spawner.memory.minHarvesterCount);
             console.log("Builder Count: " + spawner.memory.builderCount + "/" + spawner.memory.minBuilderCount);

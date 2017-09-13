@@ -1,3 +1,6 @@
+require('role.harvester');
+require('role.upgrader');
+
 module.exports = {
     run: function(spawner) {
         if (spawner.energy == spawner.energyCapacity) {

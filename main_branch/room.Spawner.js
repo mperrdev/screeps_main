@@ -29,7 +29,7 @@ module.exports = {
         }
         else{
             console.log("Met harvester and upgrader count in room: " + spawner.roomName);
-            console.log("Upgrader Count: " + spawner.memory.upgraderCount + "/" + spawner.memory.minUpgraderCount));
+            console.log("Upgrader Count: " + spawner.memory.upgraderCount + "/" + spawner.memory.minUpgraderCount);
             console.log("Harvester Count: " + spawner.memory.harvesterCount + "/" + spawner.memory.minHarvesterCount);
         }
     }

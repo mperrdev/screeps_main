@@ -6,6 +6,7 @@ module.exports = {
         spawner.memory.minHarvesterCount = 10;
         spawner.memory.harvesterCount = _.sum(spawner.room.creeps, (c) => c.memory.role == 'harvester');
         console.log(spawner.memory.harvesterCount);
+        console.log(spawner.room);
 
         if(spawner.memory.harvesterCount < spawner.memory.minHarvesterCount) {
             if (spawner.energy == spawner.energyCapacity) {

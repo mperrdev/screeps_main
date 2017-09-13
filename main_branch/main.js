@@ -1,5 +1,6 @@
 var roleHarvester = require('role.harvester');
 var roleUpgrader = require('role.upgrader');
+var roomSpawner = require('room.Spawner');
 
 module.exports.loop = function () {
     for (let name in Game.creeps) {
@@ -11,6 +12,10 @@ module.exports.loop = function () {
         else if (creep.memory.role == "upgrader") {
             roleUpgrader.run(creep);
         }
+    }
+
+    for (let spawner in Game.spawns) {
+        roomSpawner.run(spawner);
     }
 
 }

@@ -4,15 +4,15 @@ require('role.upgrader');
 module.exports = {
     run: function(spawner) {
         //Harvesters
-        spawner.memory.minHarvesterCount = 14;
+        spawner.memory.minHarvesterCount = 25;
         spawner.memory.harvesterCount = _.sum(Game.creeps, (c) => c.memory.role == 'harvester');
 
         //Upgraders
-        spawner.memory.minUpgraderCount = 6;
+        spawner.memory.minUpgraderCount = 12;
         spawner.memory.upgraderCount = _.sum(Game.creeps, (c) => c.memory.role == 'upgrader');
 
         //Builders
-        spawner.memory.minBuilderCount = 3;
+        spawner.memory.minBuilderCount = 8;
         spawner.memory.builderCount = _.sum(Game.creeps, (c) => c.memory.role == 'builder');
 
 

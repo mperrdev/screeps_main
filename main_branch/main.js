@@ -2,7 +2,7 @@ var roleHarvester = require('role.harvester');
 var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
 var roleAttacker = require('role.attacker');
-//var roleDistHarvester = require('role.distanceharvester');
+var roleDistHarvester = require('role.distanceharvester');
 var roomSpawner = require('room.Spawner');
 
 module.exports.loop = function () {
@@ -28,9 +28,9 @@ module.exports.loop = function () {
         else if (creep.memory.role == 'attacker') {
             roleAttacker.run(creep);
         }
-        else if (creep.memory.role == 'distharvester') {
-            roleDistHarvester.run(creep);
-        }
+        //else if (creep.memory.role == 'distharvester') {
+           // roleDistHarvester.run(creep);
+        //}
     }
 
     for (let name in Game.spawns) {

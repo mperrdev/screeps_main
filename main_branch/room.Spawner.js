@@ -17,7 +17,7 @@ module.exports = {
 
 
 
-        if (spawner.memory.harvesterCount < spawner.memory.minHarvesterCount) {
+        if (spawner.memory.harvesterCount < spawner.memory.minHarvesterCount && !(spawner.memory.upgraderCount < 2)) {
             if (spawner.energy == spawner.energyCapacity) {
                 var creepName = spawner.createCreep( [WORK,CARRY,MOVE,MOVE], undefined, {working: false, role: 'harvester'} );
                 console.log("Spawning harvester creep: " + creepName + " (" + spawner.memory.harvesterCount + ")");

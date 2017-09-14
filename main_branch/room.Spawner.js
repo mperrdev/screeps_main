@@ -15,6 +15,10 @@ module.exports = {
         spawner.memory.minBuilderCount = 8;
         spawner.memory.builderCount = _.sum(Game.creeps, (c) => c.memory.role == 'builder');
 
+        //Attackers
+        spawner.memory.minAttackerCount = 2;
+        spawner.memory.attackerCount = _.sum(Game.creeps, (c) => c.memory.role == 'attacker');
+
 
 
         if (spawner.memory.harvesterCount < spawner.memory.minHarvesterCount && !(spawner.memory.upgraderCount < 2)) {
@@ -33,6 +37,12 @@ module.exports = {
             if (spawner.energy == spawner.energyCapacity) {
                 var creepName = spawner.createCreep( [WORK,WORK,CARRY,MOVE], undefined, {working: false, role: 'builder'} );
                 console.log("Spawning builder creep: " + creepName + " (" + spawner.memory.builderCount + ")");
+            }
+        }
+        else if (spawner.memory.attackerCount < spawner.memory.minAttackerCount) {
+            if (spawner.energy == spawner.energyCapacity) {
+                var creepName = spawner.createCreep( [CLAIM,CLAIM,CARRY,MOVE], undefined, {working: false, role: 'attacker'} );
+                console.log("Spawning attacker creep: " + creepName + " (" + spawner.memory.attackerCount + ")");
             }
         }
         else{

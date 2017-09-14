@@ -3,7 +3,6 @@ require('role.upgrader');
 
 module.exports = {
     run: function(spawner) {
-
         //Harvesters
         spawner.memory.minHarvesterCount = 14;
         spawner.memory.harvesterCount = _.sum(Game.creeps, (c) => c.memory.role == 'harvester');
@@ -20,7 +19,7 @@ module.exports = {
 
         if (spawner.memory.harvesterCount < spawner.memory.minHarvesterCount) {
             if (spawner.energy == spawner.energyCapacity) {
-                var creepName = spawner.createCreep( [WORK,WORK,CARRY,MOVE], undefined, {working: false, role: 'harvester'} );
+                var creepName = spawner.createCreep( [WORK,CARRY,MOVE,MOVE], undefined, {working: false, role: 'harvester'} );
                 console.log("Spawning harvester creep: " + creepName + " (" + spawner.memory.harvesterCount + ")");
             }
         }
@@ -32,7 +31,7 @@ module.exports = {
         }
         else if (spawner.memory.builderCount < spawner.memory.minBuilderCount) {
             if (spawner.energy == spawner.energyCapacity) {
-                var creepName = spawner.createCreep( [WORK,CARRY,MOVE,MOVE], undefined, {working: false, role: 'builder'} );
+                var creepName = spawner.createCreep( [WORK,WORK,CARRY,MOVE], undefined, {working: false, role: 'builder'} );
                 console.log("Spawning builder creep: " + creepName + " (" + spawner.memory.builderCount + ")");
             }
         }
